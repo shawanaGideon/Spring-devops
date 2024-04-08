@@ -35,7 +35,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t shawanaTobi/groupprojectimage:1.0'
+                sh 'docker build -t shawanaTobi/groupProjectImage:1.0 .'
             }
         }
 
@@ -51,7 +51,7 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                sh 'docker push shawanaTobi/groupprojectimage:1.0'
+                sh 'docker push shawanaTobi/groupProjectImage:1.0'
             }
         }
     }
