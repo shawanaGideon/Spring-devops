@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51a664bd-ffb0-4e62-99df-5cff7ba7647b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Jenkinsfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/controller/AdvisorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/controller/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/controller/SecurityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/model/Advisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/model/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/model/Security.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/repository/AdvisorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/repository/ClientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/repository/SecurityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/service/AdvisorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/service/ClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/devops/example/server/service/SecurityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

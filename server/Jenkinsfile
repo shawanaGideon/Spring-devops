@@ -19,19 +19,23 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
-                sh 'mvn clean package'
+                dir('server') { // Navigate to the directory containing pom.xml
+                    sh 'mvn clean package'
+                }
             }
         }
 
         stage('Code Coverage') {
             steps {
-                sh 'mvn clean test jacoco:prepare-agent jacoco:report'
+                dir('server') { // Navigate to the directory containing pom.xml
+                    sh 'mvn clean test jacoco:prepare-agent jacoco:report'
+                }
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t shawanaTobi/groupprojectimage:1.0 .'
+                sh 'docker build -t shawanaTobi/groupprojectimage:1.0 server'
             }
         }
 
