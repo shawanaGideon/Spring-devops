@@ -35,7 +35,9 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t shawanatobi/groupprojectimage:1.0 .'
+                dir('server') { // Navigate to the directory containing Dockerfile
+                    sh 'docker build -t shawanatobi/groupprojectimage:1.0 .'
+                }
             }
         }
 
