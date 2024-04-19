@@ -29,6 +29,11 @@ pipeline {
             steps {
                 dir('server') { // Navigate to the directory containing pom.xml
                     sh 'mvn clean test jacoco:prepare-agent jacoco:report'
+                    // Convert JaCoCo XML report to JSON using xmlstarlet and jq
+                    sh '''
+                        xmlstarlet fo -t jacoco/jacoco.xml |
+                        jq -R 'split("\\n") | map(select(. != "")) | join("\\n")' > jacoco.json
+                    '''
                 }
             }
         }
