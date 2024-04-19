@@ -2,13 +2,18 @@ version: '3'
 
 services:
   app:
-    image: shawanatobi/groupprojectimage:1.0
+    build:
+      context: .
+      dockerfile: server/Dockerfile
     ports:
       - "8080:8080"
+    volumes:
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb+srv://giddyshawy:rLpIzhqGa558IuLw@devops.8woj8ue.mongodb.net/server?retryWrites=true&w=majority
     depends_on:
       - db
-    environment:
-      MONGO_URI: "mongodb+srv://giddyshawy:rLpIzhqGa558IuLw@devops.8woj8ue.mongodb.net/server?retryWrites=true&w=majority"
   db:
     image: mongo:4.4
     environment:
