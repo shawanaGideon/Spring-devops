@@ -23,24 +23,15 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
-                dir('server') { // Navigate to the directory containing pom.xml
+                dir('server') {
                     sh 'mvn clean package'
-                }
-            }
-        }
-
-        stage('Deliver') {
-            steps {
-                dir('server') { // Navigate to the directory containing pom.xml
-                    // Execute the Maven deploy command to release the artifact
-                    sh 'mvn deploy'
                 }
             }
         }
 
         stage('Docker Build') {
             steps {
-                dir('server') { // Navigate to the directory containing Dockerfile
+                dir('server') {
                     sh 'docker build -t shawanatobi/groupprojectimage:1.0 .'
                 }
             }
@@ -49,38 +40,40 @@ pipeline {
         stage('Docker Login') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-jenkins', usernameVariable: 'shawana', passwordVariable: 'DOCKERHUB_PWD')]) {
-                    sh '''
-                        echo "$DOCKERHUB_PWD" | docker login -u shawana --password-stdin
-                    '''
+                    sh 'echo "$DOCKERHUB_PWD" | docker login -u shawana --password-stdin'
                 }
             }
         }
 
         stage('Deploy to Dev Env') {
             steps {
-                // Deploy artifact to development environment
-                sh 'docker-compose -f docker-compose-dev.yml up -d'
+                dir('server') {
+                    sh 'docker-compose -f docker-compose-dev.yml up -d'
+                }
             }
         }
 
         stage('Deploy to QAT Env') {
             steps {
-                // Deploy artifact to QA/testing environment
-                sh 'docker-compose -f docker-compose-qat.yml up -d'
+                dir('server') {
+                    sh 'docker-compose -f docker-compose-qat.yml up -d'
+                }
             }
         }
 
         stage('Deploy to Staging Env') {
             steps {
-                // Deploy artifact to staging environment
-                sh 'docker-compose -f docker-compose-staging.yml up -d'
+                dir('server') {
+                    sh 'docker-compose -f docker-compose-staging.yml up -d'
+                }
             }
         }
 
         stage('Deploy to Production Env') {
             steps {
-                // Deploy artifact to production environment
-                sh 'docker-compose -f docker-compose-prod.yml up -d'
+                dir('server') {
+                    sh 'docker-compose -f docker-compose-prod.yml up -d'
+                }
             }
         }
     }
