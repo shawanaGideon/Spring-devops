@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51a664bd-ffb0-4e62-99df-5cff7ba7647b" name="Changes" comment="DOT ADDED" />
+    <list default="true" id="51a664bd-ffb0-4e62-99df-5cff7ba7647b" name="Changes" comment="DOT ADDED">
+      <change afterPath="$PROJECT_DIR$/server/docker-compose-qat.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
