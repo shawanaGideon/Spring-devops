@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51a664bd-ffb0-4e62-99df-5cff7ba7647b" name="Changes" comment="DOT ADDED">
-      <change beforePath="$PROJECT_DIR$/server/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker-compose-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker-compose-qat.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose-qat.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker-compose-staging.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose-staging.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

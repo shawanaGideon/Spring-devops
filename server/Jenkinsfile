@@ -29,6 +29,15 @@ pipeline {
             }
         }
 
+        stage('Code Coverage') {
+            steps {
+                dir('server') {
+                    // Navigate to the directory containing pom.xml
+                    sh 'mvn clean test jacoco:prepare-agent jacoco:report'
+                }
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 dir('server') {
