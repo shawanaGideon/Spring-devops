@@ -8,14 +8,16 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - :/app
+      - .:/app
     environment:
       - NODE_ENV=development
       - MONGO_URI=mongodb+srv://giddyshawy:rLpIzhqGa558IuLw@devops.8woj8ue.mongodb.net/server?retryWrites=true&w=majority
     depends_on:
       - db
+
   db:
     image: mongo:4.4
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+
