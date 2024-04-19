@@ -4,4 +4,4 @@ services:
   app:
     image: shawanatobi/groupprojectimage:1.0
     ports:
-      - "8002:8086"
+      - "8001:8086"
