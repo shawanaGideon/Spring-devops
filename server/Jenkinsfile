@@ -10,6 +10,10 @@ pipeline {
         DOCKERHUB_PWD = credentials('docker-jenkins')
     }
 
+    triggers {
+        pollSCM('*/5 * * * *') // Poll SCM every 5 minutes
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -19,26 +23,24 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
-                dir('server') {
-                    // Navigate to the directory containing pom.xml
+                dir('server') { // Navigate to the directory containing pom.xml
                     sh 'mvn clean package'
                 }
             }
         }
 
-        stage('Code Coverage') {
+        stage('Deliver') {
             steps {
-                dir('server') {
-                    // Navigate to the directory containing pom.xml
-                    sh 'mvn clean test jacoco:prepare-agent jacoco:report'
+                dir('server') { // Navigate to the directory containing pom.xml
+                    // Execute the Maven deploy command to release the artifact
+                    sh 'mvn deploy'
                 }
             }
         }
 
         stage('Docker Build') {
             steps {
-                dir('server') {
-                    // Navigate to the directory containing Dockerfile
+                dir('server') { // Navigate to the directory containing Dockerfile
                     sh 'docker build -t shawanatobi/groupprojectimage:1.0 .'
                 }
             }
