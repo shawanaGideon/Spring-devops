@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./server:/app
+      - :/app
     environment:
       - NODE_ENV=development
       - MONGO_URI=mongodb+srv://giddyshawy:rLpIzhqGa558IuLw@devops.8woj8ue.mongodb.net/server?retryWrites=true&w=majority
