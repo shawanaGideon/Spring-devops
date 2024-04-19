@@ -19,7 +19,8 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
-                dir('server') { // Navigate to the directory containing pom.xml
+                dir('server') {
+                    // Navigate to the directory containing pom.xml
                     sh 'mvn clean package'
                 }
             }
@@ -27,20 +28,17 @@ pipeline {
 
         stage('Code Coverage') {
             steps {
-                dir('server') { // Navigate to the directory containing pom.xml
+                dir('server') {
+                    // Navigate to the directory containing pom.xml
                     sh 'mvn clean test jacoco:prepare-agent jacoco:report'
-                    // Convert JaCoCo XML report to JSON using xmlstarlet and jq
-                    sh '''
-                        xmlstarlet fo -t jacoco/jacoco.xml |
-                        jq -R 'split("\\n") | map(select(. != "")) | join("\\n")' > jacoco.json
-                    '''
                 }
             }
         }
 
         stage('Docker Build') {
             steps {
-                dir('server') { // Navigate to the directory containing Dockerfile
+                dir('server') {
+                    // Navigate to the directory containing Dockerfile
                     sh 'docker build -t shawanatobi/groupprojectimage:1.0 .'
                 }
             }
