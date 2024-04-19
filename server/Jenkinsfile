@@ -56,29 +56,37 @@ pipeline {
 
         stage('Deploy to Dev Env') {
             steps {
-                // Deploy artifact to development environment
-                sh 'docker-compose -f docker-compose-dev.yml up -d'
+                dir('server') {
+                    // Deploy artifact to development environment
+                    sh 'docker-compose -f docker-compose-dev.yml up -d'
+                }
             }
         }
 
         stage('Deploy to QAT Env') {
             steps {
-                // Deploy artifact to QA/testing environment
-                sh 'docker-compose -f docker-compose-qat.yml up -d'
+                dir('server') {
+                    // Deploy artifact to QA/testing environment
+                    sh 'docker-compose -f docker-compose-qat.yml up -d'
+                }
             }
         }
 
         stage('Deploy to Staging Env') {
             steps {
-                // Deploy artifact to staging environment
-                sh 'docker-compose -f docker-compose-staging.yml up -d'
+                dir('server') {
+                    // Deploy artifact to staging environment
+                    sh 'docker-compose -f docker-compose-staging.yml up -d'
+                }
             }
         }
 
         stage('Deploy to Production Env') {
             steps {
-                // Deploy artifact to production environment
-                sh 'docker-compose -f docker-compose-prod.yml up -d'
+                dir('server') {
+                    // Deploy artifact to production environment
+                    sh 'docker-compose -f docker-compose-prod.yml up -d'
+                }
             }
         }
     }
